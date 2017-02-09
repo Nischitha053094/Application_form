@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.nischitha.application_form.MainActivity">
+
+    <CheckBox
+        android:id="@+id/cbMedicines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cbPharmasist"
+        android:layout_alignBottom="@+id/cbPharmasist"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
+        android:layout_toEndOf="@+id/cbEquiments"
+        android:layout_toRightOf="@+id/cbEquiments"
+        android:text="Medicines" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etName"
+        android:layout_alignBottom="@+id/etName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Name"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <CheckBox
+        android:id="@+id/cbEquiments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Equipments"
+        android:layout_alignBaseline="@+id/cbOthers"
+        android:layout_alignBottom="@+id/cbOthers"
+        android:layout_toRightOf="@+id/tvDOB"
+        android:layout_toEndOf="@+id/tvDOB" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etDOB"
+        android:onClick="showDatePickerDialog"
+        android:layout_alignBaseline="@+id/tvDOB"
+        android:layout_alignBottom="@+id/tvDOB"
+        android:layout_alignLeft="@+id/etName"
+        android:layout_alignStart="@+id/etName" />
+
+    <TextView
+        android:id="@+id/tvDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="DOB"
+        android:textSize="18sp"
+        android:layout_below="@+id/etName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:id="@+id/cbPharmasist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="41dp"
+        android:text="Pharmasist"
+        android:layout_above="@+id/cbEquiments"
+        android:layout_alignLeft="@+id/cbEquiments"
+        android:layout_alignStart="@+id/cbEquiments" />
+
+    <CheckBox
+        android:id="@+id/cbOthers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="38dp"
+        android:text="Others"
+        android:layout_above="@+id/bSubmit"
+        android:layout_alignLeft="@+id/cbMedicines"
+        android:layout_alignStart="@+id/cbMedicines" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Service Required"
+        android:textSize="18sp"
+        android:layout_above="@+id/cbPharmasist"
+        android:layout_toLeftOf="@+id/cbMedicines"
+        android:layout_toStartOf="@+id/cbMedicines"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textSize="18sp"
+        android:layout_alignTop="@+id/etAddress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textNoSuggestions|textPersonName"
+        android:textSize="18sp"
+        android:layout_below="@+id/etDOB"
+        android:layout_alignLeft="@+id/etDOB"
+        android:layout_alignStart="@+id/etDOB"
+        android:layout_marginTop="14dp" />
+
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etAddress"
+        android:layout_marginTop="15dp"
+        android:id="@+id/spinGender"
+        android:prompt="@string/Spinner"
+        android:spinnerMode="dialog"
+        android:entries="@array/Gender"
+        android:layout_toRightOf="@+id/cbPharmasist"
+        android:layout_toEndOf="@+id/cbPharmasist" />
+
+    <TextView
+        android:text="Gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spinGender"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5"
+        android:id="@+id/tvGender" />
+
+    <Button
+        android:id="@+id/bSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/etAddress"
+        android:layout_toStartOf="@+id/etAddress" />
+
+    <Button
+        android:text="Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbOthers"
+        android:layout_alignLeft="@+id/cbOthers"
+        android:layout_alignStart="@+id/cbOthers"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:id="@+id/bReset" />
+
+
+</RelativeLayout>
